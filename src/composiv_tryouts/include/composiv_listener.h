@@ -3,6 +3,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
+
 using std::placeholders::_1;
 
 
@@ -13,7 +14,7 @@ class composivListener : public rclcpp::Node {
             "topic", 10, std::bind(&composivListener::topicCallback, this, _1));
         }
     private:
-        void topicCallback(const std_msgs::msg::String & );
+         void topicCallback(const std_msgs::msg::String & );
          rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
 };
 
